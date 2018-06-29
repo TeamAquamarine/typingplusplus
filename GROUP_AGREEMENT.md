@@ -9,8 +9,8 @@ Anything else you feel is important: expectations around work times, standup tim
 
 ## Communication:
 * Tools:
-...* Outside communication will be managed via slack in the teamaquamarine channel
-...* Issues/task assignment/and to-dos on github
+* Outside communication will be managed via slack in the teamaquamarine channel
+* Issues/task assignment/and to-dos on github
 * File storage and version control via github
 
 #### Brainstorming/Meetings
@@ -24,7 +24,7 @@ There is no personal possession of an idea once voiced. Success and failures are
 ## Conflict Plan
 * Create safe place to be able to express feelers
 * If a conflict arises:
-* `First step is to get together as a group (if a group challenge) and talk about any conflict that comes up.
+* First step is to get together as a group (if a group challenge) and talk about any conflict that comes up.
 Don’t talk about others not present.
 Go directly to the person you have a conflict with.
 Scenarios
