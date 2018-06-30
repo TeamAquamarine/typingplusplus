@@ -4,9 +4,10 @@ var timerTotal = 10;
 var timerInterval;
 
 function countDownTimer() {
+  totalTime--;
   var countdown = function () {
     console.log(totalTime--);
-    if (totalTime === 0 ) {
+    if (totalTime < 0 ) {
       clearInterval(timerInterval);
     }
   };
