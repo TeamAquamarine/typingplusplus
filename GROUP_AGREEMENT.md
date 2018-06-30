@@ -1,5 +1,7 @@
 # Group Agreement
 
+HI!
+
 Once you've had a chance to talk some as a group, step away from the project planning to develop a group agreement. This is a document that your group creates collaboratively; it details your expectations of how you will work with each other. It is a "living document" - that is, it can be changed as you go along to meet your group's needs as they emerge. Again, develop this collaboratively and write it down together on a whiteboard or in a document. Keep refining it until everyone in the group agrees with it. At the minimum, it should cover:
 Communication plan: How will your group communicate with each other? What is your strategy for ensuring everyone's voices are heard, and that contributions from both loud and soft voices are listened to? Do you have a plan for managing psychological safety, as we learned about in the article on Google and teams and discussing it with Nicholas:
 Conflict plan: What will your group do when it encounters conflict? What will your process be to resolve it?
