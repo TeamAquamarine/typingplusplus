@@ -1,4 +1,4 @@
-#input-shake {
+.shake {
   animation: shake 0.5s;
   animation-iteration-count: 2s;
 }
