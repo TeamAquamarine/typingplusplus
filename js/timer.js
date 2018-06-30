@@ -3,7 +3,7 @@
 var totalTime = 10;
 var timerInterval;
 var timerSection = document.getElementById('timerSection');
-var timerBarEl = document.getElementById('timerBar');
+
 function countDownTimer() {
   totalTime--;
   var countdown = function () {
@@ -20,8 +20,9 @@ timerSection.addEventListener('click', startTimerBar);
 
 function startTimerBar(event) {
   event.preventDefault();
-  var animationTime = 'timerBar ' + totalTime + 's';
+  var animationTime = 'timerBar ' + totalTime + 's linear';
   timerBar.style.animation = animationTime;
+  console.log(timerBar);
   countDownTimer();
 }
 
