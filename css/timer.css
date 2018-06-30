@@ -1,0 +1,16 @@
+#timerBar {
+  width: 100px;
+  height: 600px;
+  background: red;
+  transform-origin: bottom;
+}
+
+@keyframes timerBar{
+  from {
+    transform: scaleY(1);
+  }
+
+  to {
+    transform: scaleY(0.0);
+  }
+}
