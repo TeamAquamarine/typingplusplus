@@ -45,6 +45,14 @@ An exhaustive explanation of how your team plans to address details in the probl
   - Listener/Handler for name input
 
 
+What we need:
+Spike of the timer
+Functionality - imput needs to do something (shake, beep etc when you make mistake) - password validation shake
+Stretch goal - 5th page, someone can add their own text and it builds a level. 
+Show off user stories during presentation
+show off graph from gitHub
+
+
 Sketches/wireframes of your project's pages
 https://xd.adobe.com/view/66644221-06b2-4bc3-7a93-a1429c7db770-1055/
 
