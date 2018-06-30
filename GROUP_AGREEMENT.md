@@ -25,27 +25,24 @@ There is no personal possession of an idea once voiced. Success and failures are
 * Create safe place to be able to express feelers
 * If a conflict arises:
 * First step is to get together as a group (if a group challenge) and talk about any conflict that comes up.
-Don’t talk about others not present.
-Go directly to the person you have a conflict with.
-Scenarios
-Feelings of not equal distribution
-Feelings that it’s getting too off task
-Someone totally breaks the internet
-Struggling with the work process
-Someone is becoming micromanag-ie
+* Don’t talk about others not present.
+* Go directly to the person you have a conflict with.
+### Scenarios
+* Feelings of not equal distribution
+* Feelings that it’s getting too off task
+* Someone totally breaks the internet
+* Struggling with the work process
+* Someone is becoming micromanag-ie
 
-Work Plan
-Flow
-Let group know if you’re going to work on something before doing so.
-Moving to science lab every day
-Break as you need, but 10 minute breaks an hour encouraged
-Check-in option after lunch
-Lunch at 11ish
-Openness to outside hours and flexibility if MVPs don’t look like they will be done in time
-Ask for help from a neighbor/partner after being stuck for 15 minutes. If both can’t solve within 30-45min, seek help from instructors
-
-
-Git Process
+## Work Plan
+### Flow
+* Let group know if you’re going to work on something before doing so.
+* Moving to science lab every day
+* Break as you need, but 10 minute breaks an hour encouraged
+* Check-in option after lunch
+* Lunch at 11ish
+* Openness to outside hours and flexibility if MVPs don’t look like they will be done in time
+* Ask for help from a neighbor/partner after being stuck for 15 minutes. If both can’t solve within 30-45min, seek help from instructors
 
 Git & GitHub Team Workflow
 =================
