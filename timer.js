@@ -1,6 +1,6 @@
 'use strict';
 
-var timerTotal = 10;
+var totalTime = 10;
 var timerInterval;
 
 function countDownTimer() {
