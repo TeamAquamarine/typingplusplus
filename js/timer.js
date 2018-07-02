@@ -1,9 +1,10 @@
 'use strict';
-
-var totalTime = 10;
+//global variables 
+var totalTime = 60;
 var timerInterval;
-var timerSection = document.getElementById('timerSection');
-
+var timerStartButton = document.getElementById('start');
+var timerStopButton = document.getElementById('stop');
+//bar timer count down
 function countDownTimer() {
   totalTime--;
   var countdown = function () {
@@ -14,17 +15,23 @@ function countDownTimer() {
   };
   timerInterval = setInterval(countdown, 1000);
 }
-
-timerSection.addEventListener('click', startTimerBar);
-
-
+//start button event listener
+timerStartButton.addEventListener('click', startTimerBar);
+//animation for timer bar
 function startTimerBar(event) {
   event.preventDefault();
-  var animationTime = 'timerBar ' + totalTime + 's linear';
+  var animationTime = 'timerBar ' + totalTime + 's linear forwards';
   timerBar.style.animation = animationTime;
   console.log(timerBar);
   countDownTimer();
 }
+//stop button for timer
+timerStopButton.addEventListener('click', stopTimerBar);
 
-
-// animation: timerBar 10s;
+// Stop timer, pause animation
+function stopTimerBar(event) {
+  event.preventDefault();
+  var animationTime = 'timerBar ' + totalTime + 's linear forwards paused';
+  timerBar.style.animation = animationTime;
+  clearInterval(timerInterval);
+}

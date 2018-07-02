@@ -3,6 +3,7 @@
   height: 600px;
   background: red;
   transform-origin: bottom;
+  animation-fill-mode: both;
 }
 
 @keyframes timerBar{
