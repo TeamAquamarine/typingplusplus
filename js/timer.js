@@ -1,9 +1,37 @@
 'use strict';
-//global variables 
-var totalTime = 30;
+
+/***********************************
+*     GLOBAL VARIABLE FOR TIMER    *
+************************************/
 var timerInterval;
 var timerStartButton = document.getElementById('start');
 var timerStopButton = document.getElementById('stop');
+
+var levelTimerArray = [];
+/***********************************
+*     Timer Object Constructor    *
+************************************/
+function LevelTimer(time){
+  this.totalTime = time;
+  this .timerInterval;
+  levelTimerArray.push(this);
+}
+
+LevelTimer.prototype.countDownTimer = function() {
+  this.totalTime--;
+  countdown();
+  timerInterval = setInterval(countdown, 1000);
+};
+
+/***********************************
+*     Helper Functions             *
+************************************/
+var countdown = function() {
+  console.log(totalTime--);
+  if(totalTime < 0) {
+    clearInterval(timerInterval);
+  }
+};
 //bar timer count down
 function countDownTimer() {
   totalTime--;
