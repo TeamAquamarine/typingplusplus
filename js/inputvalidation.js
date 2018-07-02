@@ -1,15 +1,24 @@
 'use strict';
-var shake = document.getElementsByClassName('shake');
-debugger;
-shake.addEventListener('keypress', textValidation);
-debugger;
+var typingInput = document.getElementById('typing-input');
+typingInput.addEventListener('keypress', textValidation);
 
+
+//this is our function to validate text
 function textValidation(event) {
-  console.log('alert working');
   event.preventDefault();
+  console.log(event.key);
+  if (event.key === 'h'){
+    typingInput.className = 'shake';
+  }
 
 }
-
+// function handleClickEvent(event) {
+//   var clickedNode = event.target;
+//   if (clickedNode.dataset.index >= 0) {
+//     Product.renderThreeRandomly();
+//     Product.totalClicks++;
+//     Product.productsArray[clickedNode.dataset.index].votedTimes++;
+//     storeTotalClicks()
 
 // function click(event) {
 //   document.getElementsByClassName('shake').addEventListner('submit', function (event) {
