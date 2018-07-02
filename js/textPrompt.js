@@ -9,10 +9,10 @@ function Level(level, text, timer) {
   this.timer = timer;
   levelArray.push(this);
 }
-
+//new levels
 var level1 = new Level(1, ['var i = 0', 'i = 0; i < 3; i++']);
 var level2 = new Level(2, [' ( ) ! @ : / ~ { }', 'function(){};']);
-
+//splitting
 Level.prototype.parsePrompt = function (prompt) {
   var parsedPrompt = prompt.split('');
   return parsedPrompt;
