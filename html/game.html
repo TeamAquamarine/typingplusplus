@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,24 @@
   <title>Document</title>
   <link href="./css/timer.css" rel="stylesheet">
 </head>
+
 <body>
+  <header>
+    <nav>
+      <img src="http://placehold.it/50x50" alt="Typing ++ Logo">
+      <ul>
+        <li>
+          <a href="../index.html">HOME</a>
+        </li>
+        <li>
+          <a href="./high_score.html">HIGH SCORE</a>
+        </li>
+        <li>
+          <a href="./about_us.html">MEET THE TEAM</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
   <section id="timerSection">
     <img id="timerImage">
     <div id="timerBar"></div>
@@ -15,8 +33,9 @@
     <button id="stop">stop</button>
   </section>
   <form id="input-shake">
-      <input type="text" id="typingInput">
-    </form>
+    <input type="text" id="typingInput">
+  </form>
   <script src="./js/timer.js"></script>
 </body>
+
 </html>
