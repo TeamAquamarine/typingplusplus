@@ -1,6 +1,6 @@
 .shake {
   animation: shake 0.5s;
-  animation-iteration-count: 2s;
+  /* animation-iteration-count: 2s; */
 }
 
 @keyframes shake {
