@@ -1,6 +1,6 @@
 'use strict';
 //global variables 
-var totalTime = 60;
+var totalTime = 30;
 var timerInterval;
 var timerStartButton = document.getElementById('start');
 var timerStopButton = document.getElementById('stop');
@@ -35,3 +35,9 @@ function stopTimerBar(event) {
   timerBar.style.animation = animationTime;
   clearInterval(timerInterval);
 }
+//recall this timer.js in inputValidation.js so enter button resets timer***
+function resetTimerBar(){
+  totalTime = 30;
+  timerBar.style.animation = '';
+}
+
