@@ -38,11 +38,11 @@ function createTableBody() {
   for (var i = 0; i < 10; i++ ) {
     //add player name
     tdEl = document.createElement('td');
-    tdEl.textContent = (playerArray[i].name);
+    tdEl.textContent = (rankedArray[i].name);
     trEl.appendChild(tdEl);
     //add highscore
     tdEl = document.createElement('td');
-    tdEl.textContent = (playerArray[i].highScore);
+    tdEl.textContent = (rankedArray[i].highScore);
     trEl.appendChild(tdEl);
     //append player row to table
     tableNode.appendChild(trEl);
