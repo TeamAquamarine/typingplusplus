@@ -1,6 +1,7 @@
 
 #cardBox {
-  margin: auto
+  margin: auto;
+  position: relative;
 }
 
 #sharonCard {
@@ -64,7 +65,7 @@
   backface-visibility: hidden;
   background: #17a1ab;
   color: black;
-  line-height: 150px;
+  line-height: 230px;
   text-align: center;
   transform: rotateY(180deg);
  }
