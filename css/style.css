@@ -1,0 +1,14 @@
+/* teal color #17a1ab */
+$primary: #17a1ab;
+$secondary: #434343; 
+
+body {
+  max-width: 960px;
+  font-family: "halyard-text",sans-serif;
+  background: white;
+}
+nav {
+background: #17a1ab;
+height: 100px;
+max-width: 90%;
+}
