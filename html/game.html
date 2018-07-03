@@ -9,12 +9,13 @@
   <link href="../css/reset.css" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/timer.css" rel="stylesheet">
-  <link href="../css/inputvalidation.css" rel="stylesheet">
+  <link href="../css/game.css" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <nav>
-      <img src="http://placehold.it/50x50" alt="Typing ++ Logo">
+      <img src="../images/logo_nav.png" alt="Typing ++ Logo">
       <ul>
         <li>
           <a href="../index.html">HOME</a>
@@ -28,23 +29,26 @@
       </ul>
     </nav>
   </header>
-  <main>
-    <section id="promptSection">
-      Text To Type
+  <main id="gamePage">
+    <h2>Welcome to our game, begin typing to start the timer</h2>
+    <section id="gameContent">
+      <section id="promptSection">
+      </section>
+      <section id="typingSection">
+        <form id="input-shake">
+          <input type="text" id="typingInput">
+        </form>
+      </section>
     </section>
-    <section id="typingSection">
-      Player Typing Text Area
-    </section>
-    <section id="highScoreSection">
-      High Score Area
-    </section>
-    <section id="timerSection">
-      <img id="timerImage">
-      <div id="timerBar"></div>
-    </section>
-    <form id="input-shake">
-      <input type="text" id="typingInput">
-    </form>
+    <aside>
+      <section id="highScoreSection">
+        High Score Area
+      </section>
+      <section id="timerSection">
+        <img id="timerImage">
+        <!-- <div id="timerBar"></div> -->
+      </section>
+    </aside>
   </main>
   <script src="../js/timer.js"></script>
   <script src="../js/level.js"></script>
