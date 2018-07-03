@@ -1,7 +1,8 @@
 'use strict';
 //globals
 var userNode = document.getElementById('playerNameInput');
-var playButton = document.getElementById('play');
+console.log(userNode);
+var playButton = document.getElementById('playGameButton');
 // Grab users array from local storage or create an empty array if nothing is stored
 var userArray = JSON.parse(localStorage.getItem('users') || '[]');
 

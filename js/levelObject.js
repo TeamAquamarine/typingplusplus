@@ -10,7 +10,7 @@ var levelTwoPrompts = ['e / f', 'f % g', 'g +=1'];
 *     DOM access nodes             *
 ************************************/
 
-var codePromptEl = document.getElementById('codePromptTest');
+var codePromptNode = document.getElementById('promptSection');
 
 /***********************************
 *     Level Constructor            *
@@ -34,8 +34,9 @@ Level.prototype.render = function () {
   var pEl = document.createElement('p');
 
   // TODO: Handle individual level logic here. Input check, etc.
-  pEl.textContent = this.codePromptArray[0];
-  codePromptEl.appendChild(pEl);
+  var randomNum = Math.floor(Math.random() * (this.codePromptArray.length) - 1);
+  pEl.textContent = this.codePromptArray[randomNum];
+  codePromptNode.appendChild(pEl);
 
   // Start timer
 };
