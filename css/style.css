@@ -37,7 +37,7 @@ nav ul{
   padding: 0;
   position: absolute;
   bottom: 35%;
-  left:8%;
+  left:10%;
   letter-spacing: .30;
 }
 nav li{
@@ -67,8 +67,8 @@ li a:hover {
   margin: auto;
   border-radius: 1em;
 }
-button{
-  margin: 2em 3.5em 0em 2em;
+#playGameButton {
+  margin: 1em 2.5em 0em 5em;
   display:inline-block;
   padding:.3em 2em;
   border-radius:1em;
@@ -83,6 +83,22 @@ button{
   transition: all 0.2s;
   width: 120px;
   }
+  #highScoreButton {
+    margin: 2em 3.5em 0em -.6em;
+    display:inline-block;
+    padding:.3em 2em;
+    border-radius:1em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:inherit;
+    font-size: 12px;
+    font-weight:200;
+    color:#FFFFFF;
+    background-color: #17a1ab;
+    text-align:center;
+    transition: all 0.2s;
+    width: 120px;
+    }
   button a{
     margin: auto;
     text-decoration:none;
