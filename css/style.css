@@ -50,9 +50,9 @@ li a:hover {
   background-color: default;
   color: rgb(61, 61, 92);
 }
-/* main {
+main {
   position: relative
-} */
+}
 section{
   position: absolute;
   top: 20%;
