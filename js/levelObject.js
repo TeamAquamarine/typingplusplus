@@ -2,7 +2,12 @@
 /***********************************
 *     Global Variables             *
 ************************************/
+var typingInputNode = document.getElementById('typingInput');
+var currentLevel;
+
 var levelArray = [];
+var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+console.log(currentUser.level);
 var levelOnePrompts = ['a + b', 'b - c', 'c * d'];
 var levelTwoPrompts = ['e / f', 'f % g', 'g +=1'];
 
@@ -18,6 +23,7 @@ var codePromptNode = document.getElementById('promptSection');
 //level constructor (level, codePromptArray, timer)
 function Level(level, codePromptArray, timer) {
   this.level = level;
+  currentLevel = this;
   this.codePromptArray = codePromptArray;
   this.timer = new Timer(timer);
   levelArray.push(this);
@@ -34,15 +40,23 @@ Level.prototype.render = function () {
   var pEl = document.createElement('p');
 
   // TODO: Handle individual level logic here. Input check, etc.
-  var randomNum = Math.floor(Math.random() * (this.codePromptArray.length) - 1);
+  var randomNum = Math.floor(Math.random() * this.codePromptArray.length);
   pEl.textContent = this.codePromptArray[randomNum];
   codePromptNode.appendChild(pEl);
 
   // Start timer
 };
 
+
+typingInputNode.addEventListener('keypress', startTimerHandler);
+
+function startTimerHandler() {
+  console.log('in event handler');
+  currentLevel.timer.startTimer();
+}
+
 //new levels
-new Level(1, levelOnePrompts, 10);
+new Level(currentUser.level, levelOnePrompts, 10);
 
 // render level one
 levelArray[0].render();

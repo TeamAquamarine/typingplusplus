@@ -1,7 +1,6 @@
 'use strict';
 //globals
 var userNode = document.getElementById('playerNameInput');
-console.log(userNode);
 var playButton = document.getElementById('playGameButton');
 // Grab users array from local storage or create an empty array if nothing is stored
 var userArray = JSON.parse(localStorage.getItem('users') || '[]');
@@ -13,8 +12,6 @@ function User(name) {
   this.name = name;
   this.highScore = 0;
   this.level = 1;
-  userArray.push(this);
-  localStorage.setItem('users', JSON.stringify(userArray));
 };
 
 //When there is consensus on calculating score can create this function
@@ -38,5 +35,9 @@ playButton.addEventListener('click', createUserObject);
 function createUserObject(event){
   event.preventDefault();
   console.log(userNode.value);
-  new User(userNode.value);
+  currentUser = new User(userNode.value);
+  userArray.push(currentUser);
+  localStorage.setItem('users', JSON.stringify(userArray));
+  console.log(currentUser);
+  localStorage.setItem('currentUser', JSON.stringify(currentUser));
 }
