@@ -19,7 +19,7 @@ background: #17a1ab;
 height: 70px;
 margin-top: 30px;
 max-width: 100%;
-align-content: center;
+/* align-content: center; */
 position: relative;
 }
 
@@ -37,7 +37,8 @@ nav ul{
   padding: 0;
   position: absolute;
   bottom: 35%;
-  left:15%;
+  left:8%;
+  letter-spacing: .30;
 }
 nav li{
   display: inline;
