@@ -51,7 +51,7 @@ function Timer(totalTime) {
 }
 
 Timer.prototype.startTimer = function () {
-  var animationTime = 'timerBar ' + this.timeRemaining + 's linear forwards';
+  var animationTime = 'timerBar ' + this.totalTime + 's linear forwards';
   timerBar.style.animation = animationTime;
   this.countDown();
 };
@@ -70,7 +70,12 @@ Timer.prototype.countDown = function () {
 };
 
 Timer.prototype.stopTimer = function () {
-  var animationTime = 'timerBar ' + this.timeRemaining + 's linear forwards paused';
+  var animationTime = 'timerBar ' + this.totalTime + 's linear forwards paused';
   timerBar.style.animation = animationTime;
   clearInterval(timeInterval);
+};
+
+Timer.prototype.resetTimer = function () {
+  timerBar.style.animation = '';
+  this.timeRemaining = this.totalTime;
 };
