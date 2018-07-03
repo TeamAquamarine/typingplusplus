@@ -5,7 +5,9 @@ var playButton = document.getElementById('play');
 // Grab users array from local storage or create an empty array if nothing is stored
 var userArray = JSON.parse(localStorage.getItem('users') || '[]');
 
-//user constructor
+/***********************************
+*     User Constructor             *
+************************************/
 function User(name) {
   this.name = name;
   this.highScore = 0;
@@ -24,15 +26,16 @@ User.prototype.storeLocal = function() {
   localStorage.setItem(JSON.stringify('users', this));
 };
 
+
+/***********************************
+*     Listener/Handler for User    *
+************************************/
 //listener/handler to create user objects
 playButton.addEventListener('click', createUserObject);
 
+// Creates a new user and saves to local storage when name is inputted and play is clicked
 function createUserObject(event){
   event.preventDefault();
   console.log(userNode.value);
   new User(userNode.value);
 }
-
-
-//New instance to check its working
-var Fred = new User('Fred');
