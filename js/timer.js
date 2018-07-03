@@ -1,7 +1,6 @@
 'use strict';
 //global variables 
-var timerInterval;
-
+var timeInterval;
 // var timerStartButton = document.getElementById('start');
 // var timerStopButton = document.getElementById('stop');
 
@@ -59,7 +58,7 @@ Timer.prototype.startTimer = function () {
 
 Timer.prototype.countDown = function () {
   var _this = this;
-  var timeInterval = setInterval(function () {
+  timeInterval = setInterval(function () {
     if(_this.timeRemaining > 0){
       _this.timeRemaining--;
       console.log(_this.timeRemaining);
@@ -68,4 +67,10 @@ Timer.prototype.countDown = function () {
     }
   }, 1000);
   this.timeRemaining = _this.timeRemaining;
+};
+
+Timer.prototype.stopTimer = function () {
+  var animationTime = 'timerBar ' + this.timeRemaining + 's linear forwards paused';
+  timerBar.style.animation = animationTime;
+  clearInterval(timeInterval);
 };
