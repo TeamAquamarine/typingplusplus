@@ -48,9 +48,10 @@ var timerInterval;
 function Timer(totalTime) {
   this.totalTime = totalTime;
   this.timeRemaining = this.totalTime;
-  var timerStartButton = document.getElementById('start');
-  var timerStopButton = document.getElementById('stop');
-  timerStartButton.addEventListener('click', this.startTimer);
-  timerStopButton.addEventListener('click', this.stopTimer);
 
 }
+
+Timer.prototype.startTimer = function () {
+  var animationTime = 'timerBar ' + this.totalTime + 's linear forwards';
+  timerBar.style.animation = animationTime;
+};

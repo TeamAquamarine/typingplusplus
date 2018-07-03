@@ -35,18 +35,16 @@ Level.prototype.render = function () {
 
   // TODO: Handle individual level logic here. Input check, etc.
   pEl.textContent = this.codePromptArray[0];
-  console.log(pEl);
   codePromptEl.appendChild(pEl);
 
   // Start timer
-
+  this.timer.startTimer();
 };
 
 //new levels
-new Level(1, levelOnePrompts, 40);
+new Level(1, levelOnePrompts, 10);
 
 // render level one
-console.log(levelArray[0]);
 levelArray[0].render();
 console.log(levelArray[0].timer.totalTime);
 console.log(levelArray[0].timer.timeRemaining);
