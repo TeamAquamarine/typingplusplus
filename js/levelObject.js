@@ -19,7 +19,7 @@ var codePromptEl = document.getElementById('codePromptTest');
 function Level(level, codePromptArray, timer) {
   this.level = level;
   this.codePromptArray = codePromptArray;
-  this.timer = timer;
+  this.timer = new Timer(timer);
   levelArray.push(this);
 }
 
@@ -37,12 +37,16 @@ Level.prototype.render = function () {
   pEl.textContent = this.codePromptArray[0];
   console.log(pEl);
   codePromptEl.appendChild(pEl);
+
+  // Start timer
+
 };
 
 //new levels
-new Level(1, levelOnePrompts);
-new Level(2, levelTwoPrompts);
+new Level(1, levelOnePrompts, 40);
 
 // render level one
 console.log(levelArray[0]);
 levelArray[0].render();
+console.log(levelArray[0].timer.totalTime);
+console.log(levelArray[0].timer.timeRemaining);
