@@ -1,29 +1,41 @@
 'use strict';
 //globals
-userArray = [];
 var userNode = document.getElementById('playerNameInput');
+var playButton = document.getElementById('play');
+// Grab users array from local storage or create an empty array if nothing is stored
+var userArray = JSON.parse(localStorage.getItem('users') || '[]');
 
-//user constructor
+/***********************************
+*     User Constructor             *
+************************************/
 function User(name) {
   this.name = name;
   this.highScore = 0;
   this.level = 1;
   userArray.push(this);
+  localStorage.setItem('users', JSON.stringify(userArray));
 };
 
 //When there is consensus on calculating score can create this function
-User.prototype.calcScore = function() {};
+User.prototype.incrementScore = function() {
+  this.highScore += 1000000;
+};
 
 //When there is a handler for name input can create this function
-User.prototype.storeLocal = function() {};
+User.prototype.storeLocal = function() {
+  localStorage.setItem(JSON.stringify('users', this));
+};
 
+
+/***********************************
+*     Listener/Handler for User    *
+************************************/
 //listener/handler to create user objects
-userNode.addEventListener('submit', createUserObject);
+playButton.addEventListener('click', createUserObject);
 
-// function createUserObject(event){
-//   new User(event.target);
-// }
-
-
-//New instance to check its working
-var Fred = new User(Fred);
+// Creates a new user and saves to local storage when name is inputted and play is clicked
+function createUserObject(event){
+  event.preventDefault();
+  console.log(userNode.value);
+  new User(userNode.value);
+}
