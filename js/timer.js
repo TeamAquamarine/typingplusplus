@@ -52,6 +52,20 @@ function Timer(totalTime) {
 }
 
 Timer.prototype.startTimer = function () {
-  var animationTime = 'timerBar ' + this.totalTime + 's linear forwards';
+  var animationTime = 'timerBar ' + this.timeRemaining + 's linear forwards';
   timerBar.style.animation = animationTime;
+  this.countDown();
+};
+
+Timer.prototype.countDown = function () {
+  var _this = this;
+  var timeInterval = setInterval(function () {
+    if(_this.timeRemaining > 0){
+      _this.timeRemaining--;
+      console.log(_this.timeRemaining);
+    } else {
+      clearInterval(timeInterval);
+    }
+  }, 1000);
+  this.timeRemaining = _this.timeRemaining;
 };

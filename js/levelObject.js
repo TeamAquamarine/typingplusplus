@@ -38,7 +38,6 @@ Level.prototype.render = function () {
   codePromptEl.appendChild(pEl);
 
   // Start timer
-  this.timer.startTimer();
 };
 
 //new levels
@@ -46,5 +45,3 @@ new Level(1, levelOnePrompts, 10);
 
 // render level one
 levelArray[0].render();
-console.log(levelArray[0].timer.totalTime);
-console.log(levelArray[0].timer.timeRemaining);
