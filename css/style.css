@@ -9,6 +9,84 @@ body {
 }
 nav {
 background: #17a1ab;
-height: 100px;
-max-width: 90%;
+height: 70px;
+margin-top: 30px;
+max-width: 100%;
+align-content: center;
+position: relative;
 }
+
+nav img {
+  display:inline-block;
+  /* float:; */
+  max-height: 130px;
+  margin-top:-19px;
+}
+nav ul{
+  float: left;
+  color: white;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 35%;
+  left:15%;
+}
+nav li{
+  display: inline;
+  padding: 20px;
+}
+li a{
+  color:white;
+  text-decoration: none;
+  margin-top: 33px;
+}
+li a:hover {
+  background-color: default;
+  color: rgb(61, 61, 92);
+}
+/* main {
+  position: relative
+} */
+section{
+  position: absolute;
+  top: 20%;
+  left: 20%; 
+}
+#playerNameInput{
+  width: 300px;
+  height: 30px;
+  display: block;
+  clear: both;
+  margin: auto;
+  border-radius: 1em;
+}
+button{
+  margin: 2em 3.5em 0em 2em;
+  display:inline-block;
+  padding:.3em 2em;
+  border-radius:1em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:inherit;
+  font-size: 12px;
+  font-weight:200;
+  color:#FFFFFF;
+  background-color: #17a1ab;
+  text-align:center;
+  transition: all 0.2s;
+  width: 120px;
+  }
+  button a{
+    margin: auto;
+    text-decoration:none;
+    color: white;
+    
+  }
+  button:hover{
+  background-color: white;
+  color: #17a1ab;
+  }
+  button a:hover{
+    background-color: white;
+    color: #17a1ab;
+    }
