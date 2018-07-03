@@ -1,17 +1,19 @@
 /* teal color #17a1ab */
 /* $primary: #17a1ab;
 $secondary: #434343;  */
-* {
-  outline: 1px solid red;
-}
-
 
 body {
-  max-width: 960px;
+  max-width: 100%;
   font-family: 'Muli', sans-serif;
   background: white;
   margin: auto;
 }
+
+main {
+  max-width: 960px;
+  margin: 10px auto;
+}
+
 nav {
 background: #17a1ab;
 height: 70px;
@@ -50,10 +52,8 @@ li a:hover {
   background-color: default;
   color: rgb(61, 61, 92);
 }
-/* main {
-  position: relative
-} */
-section{
+
+#homeSection{
   position: absolute;
   top: 20%;
   left: 30%; 

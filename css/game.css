@@ -1,3 +1,51 @@
+#gamePage {
+  max-width: 43%;
+  margin-top: 25px;
+}
+
+#gameContent {
+  float: left;
+}
+
+#promptSection {
+  width: 400px;
+  height: 100px;
+  outline: 1px solid #434343;
+  margin-bottom: 25px;
+}
+
+#typingSection {
+  width: 400px;
+  height: 100px;
+  outline: 1px solid #434343;
+}
+
+aside {
+  float: right;
+}
+
+#highScoreSection {
+  width: 150px;
+  height: 50px;
+  margin-bottom: 30px;
+}
+
+#timerSection {
+  width: 150px;
+  height: 200px;
+}
+
+#typingInput {
+  width: 95%;
+  height: 85px;
+  margin: 5px 8px;
+  border: none;
+}
+
+#typingInput:focus {
+  outline: none;
+}
+
 .shake {
   animation: shake 0.5s;
   /* animation-iteration-count: 2s; */
@@ -16,21 +64,3 @@
  90% {transform: translate(1px, 2px) rotate(0deg); }
  100% {transform: translate(1px, -2px) rotate(-1deg); }
 }
-
-/* 
-#input-shake {
-  text-align: center;
-  animation: shake .1s linear;
-  animation-iteration-count: 2;
-} */
-
-/* @keyframes slidin {
-  from {
-    margin-left: 100%;
-    width: 300%; 
-  }
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-} */
