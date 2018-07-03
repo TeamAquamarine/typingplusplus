@@ -1,11 +1,16 @@
 /* teal color #17a1ab */
-$primary: #17a1ab;
-$secondary: #434343; 
+/* $primary: #17a1ab;
+$secondary: #434343;  */
+* {
+  outline: 1px solid red;
+}
+
 
 body {
   max-width: 960px;
-  font-family: "halyard-text",sans-serif;
+  font-family: 'Muli', sans-serif;
   background: white;
+  margin: auto;
 }
 nav {
 background: #17a1ab;
@@ -19,8 +24,9 @@ position: relative;
 nav img {
   display:inline-block;
   /* float:; */
-  max-height: 130px;
-  margin-top:-19px;
+  max-height: 70px;
+  /* margin-top: top -3px; */
+  margin-left:20px;
 }
 nav ul{
   float: left;
@@ -50,7 +56,7 @@ li a:hover {
 section{
   position: absolute;
   top: 20%;
-  left: 20%; 
+  left: 30%; 
 }
 #playerNameInput{
   width: 300px;
