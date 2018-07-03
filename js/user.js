@@ -1,7 +1,7 @@
 'use strict';
 //globals
 var userNode = document.getElementById('playerNameInput');
-
+var playButton = document.getElementById('play');
 // Grab users array from local storage or create an empty array if nothing is stored
 var userArray = JSON.parse(localStorage.getItem('users') || '[]');
 
@@ -25,13 +25,14 @@ User.prototype.storeLocal = function() {
 };
 
 //listener/handler to create user objects
-userNode.addEventListener('submit', createUserObject);
+playButton.addEventListener('click', createUserObject);
 
 function createUserObject(event){
-  new User(event.target.value);
+  event.preventDefault();
+  console.log(userNode.value);
+  new User(userNode.value);
 }
 
 
 //New instance to check its working
 var Fred = new User('Fred');
-console.log(userArray);
