@@ -48,11 +48,15 @@ Level.prototype.render = function () {
 };
 
 
-typingInputNode.addEventListener('keypress', startTimerHandler);
+typingInputNode.addEventListener('focus', startTimerHandler);
 
 function startTimerHandler() {
   console.log('in event handler');
-  currentLevel.timer.startTimer();
+  if(currentLevel.timer.timeRemaining === currentLevel.timer.totalTime){
+    currentLevel.timer.startTimer();
+  } else {
+    typingInputNode.removeEventListener(startTimerHandler);
+  }
 }
 
 //new levels
