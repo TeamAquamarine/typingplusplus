@@ -6,8 +6,8 @@ var userNode = document.getElementById('playerNameInput');
 //user constructor
 function User(name) {
   this.name = name;
-  highScore = 0;
-  level = 1;
+  this.highScore = 0;
+  this.level = 1;
   userArray.push(this);
 };
 
