@@ -8,11 +8,13 @@
   <title>Typing ++</title>
   <link rel="stylesheet" href="../css/reset.css">
   <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/about_us.css" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <nav>
-      <img src="http://placehold.it/50x50" alt="Typing ++ Logo">
+      <img src="../images/logo_nav.png" alt="Typing ++ Logo">
       <ul>
         <li>
           <a href="../index.html">HOME</a>
@@ -27,17 +29,40 @@
     </nav>
   </header>
   <main>
-    <section>
-      <img id="Megan card" src="http://placehold.it/250x250" alt="Megan spinning card">
-    </section>
-    <section>
-      <img id="Alex card" src="http://placehold.it/250x250" alt="Alex spinning card">
-    </section>
-    <section>
-      <img id="Sharon card" src="http://placehold.it/250x250" alt="Sharon spinning card">
-    </section>
-    <section>
-      <img id="Connor card" src="http://placehold.it/250x250" alt="Connor spinning card">
-    </section>
+    <div id="cardBox">
+      <div id="meganCard" class="flipCard" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipAnimation">
+          <div class="cardFront">
+            <img id="meganFront" src="http://placehold.it/230x230" alt="Megan spinning card">
+          </div>
+          <div class="cardBack">Here come the links
+          </div>
+        </div>
+      </div>
+      <div id="alexCard" class="flipCard" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipAnimation">
+          <div class="cardFront">
+            <img id="alexFront" src="http://placehold.it/230x230" alt="Alex spinning card">
+          </div>
+          <div class="cardBack">Here come the links </div>
+        </div>
+      </div>
+      <div id="sharonCard" class="flipCard" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipAnimation">
+          <div class="cardFront">
+            <img id="sharonFront" src="http://placehold.it/230x230" alt="Sharon spinning card">
+          </div>
+          <div class="cardBack">Here come the links </div>
+        </div>
+      </div>
+      <div id="connorCard" class="flipCard" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipAnimation">
+          <div class="cardFront">
+            <img id="connorFront" src="http://placehold.it/230x230" alt="Connor spinning card">
+          </div>
+          <div class="cardBack">Here come the links </div>
+        </div>
+      </div>
+    </div>
   </main>
 </body>
