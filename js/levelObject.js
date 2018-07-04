@@ -5,6 +5,7 @@
 var typingInputNode = document.getElementById('typingInput');
 var currentLevel;
 var currentPrompt;
+var currentPromptChar = 0;
 var parsedCurrentPrompt;
 var levelArray = [];
 var currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -73,10 +74,11 @@ function textValidation(event) {
   console.log(event.key);
   event.preventDefault();
   var keyPressed = event.key;
-  if(keyPressed !== parsedCurrentPrompt[0]){
+  if(keyPressed !== parsedCurrentPrompt[currentPromptChar]){
     typingInput.classList.add('shake');
   } else {
     typingInput.value += keyPressed;
+    currentPromptChar++;
   }
 }
 //this is our function which allows the validation input box to continue shaking
