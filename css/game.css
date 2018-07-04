@@ -66,6 +66,18 @@ max-height: 372px;
   bottom:0;
   max-width: 150px;
 }
+#purpleBug {
+  position:absolute;
+  left:0;
+  top:0;
+  max-width: 80px;
+}
+#greenBug {
+  position:absolute;
+  left:50px;
+  top:10px;
+  max-width: 80px;
+}
 
 #typingInput {
   width: 95%;
