@@ -6,9 +6,7 @@
 
 // global variables
 var tableNode = document.getElementById('highScore');
-console.log(tableNode);
 var playerArray = JSON.parse(localStorage.getItem('users'));
-console.log(playerArray);
 
 //sort playerArray
 var rankedArray = playerArray.slice();
@@ -16,11 +14,9 @@ rankedArray.sort(function(a,b) {
   return a.highScore - b.highScore;
 });
 rankedArray = rankedArray.reverse();
-console.log(rankedArray);
 
 //render header row function
 function createHeaderRow() {
-  console.log('hi');
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
   thEl.textContent = ('Player Name');
