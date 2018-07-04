@@ -4,7 +4,8 @@
 ************************************/
 var typingInputNode = document.getElementById('typingInput');
 var currentLevel;
-
+var currentPrompt;
+var parsedCurrentPrompt;
 var levelArray = [];
 var currentUser = JSON.parse(localStorage.getItem('currentUser'));
 console.log(currentUser.level);
@@ -41,9 +42,10 @@ Level.prototype.render = function () {
 
   // TODO: Handle individual level logic here. Input check, etc.
   var randomNum = Math.floor(Math.random() * this.codePromptArray.length);
-  pEl.textContent = this.codePromptArray[randomNum];
+  currentPrompt = this.codePromptArray[randomNum];
+  pEl.textContent = currentPrompt;
   codePromptNode.appendChild(pEl);
-
+  
   // Start timer
 };
 
@@ -52,11 +54,34 @@ typingInputNode.addEventListener('focus', startTimerHandler);
 
 function startTimerHandler() {
   console.log('in event handler');
+  parsedCurrentPrompt = currentLevel.parsePrompt(currentPrompt);
+  console.log(parsedCurrentPrompt);
   if(currentLevel.timer.timeRemaining === currentLevel.timer.totalTime){
     currentLevel.timer.startTimer();
   } else {
     typingInputNode.removeEventListener(startTimerHandler);
   }
+}
+
+//creating the event listeners for the validation input box
+var typingInput = document.getElementById('typingInput');
+typingInput.addEventListener('keypress', textValidation);
+typingInput.addEventListener('animationend', refreshShake);
+
+//this is our function to validate text
+function textValidation(event) {
+  console.log(event.key);
+  event.preventDefault();
+  var keyPressed = event.key;
+  if(keyPressed !== parsedCurrentPrompt[0]){
+    typingInput.classList.add('shake');
+  } else {
+    typingInput.value += keyPressed;
+  }
+}
+//this is our function which allows the validation input box to continue shaking
+function refreshShake() {
+  typingInput.classList.remove('shake');
 }
 
 //new levels
