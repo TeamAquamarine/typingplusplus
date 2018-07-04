@@ -6,7 +6,9 @@
 
 // global variables
 var tableNode = document.getElementById('highScore');
+console.log(tableNode);
 var playerArray = JSON.parse(localStorage.getItem('users'));
+console.log(playerArray);
 
 //sort playerArray
 var rankedArray = playerArray.slice();
@@ -18,6 +20,7 @@ console.log(rankedArray);
 
 //render header row function
 function createHeaderRow() {
+  console.log('hi');
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
   thEl.textContent = ('Player Name');
@@ -37,6 +40,7 @@ function createTableBody() {
   //create row for each player in array
   for (var i = 0; i < 10; i++ ) {
     //add player name
+    trEl = document.createElement('tr');
     tdEl = document.createElement('td');
     tdEl.textContent = (rankedArray[i].name);
     trEl.appendChild(tdEl);
@@ -54,3 +58,5 @@ function renderTable() {
   createHeaderRow();
   createTableBody();
 }
+
+renderTable();
