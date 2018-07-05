@@ -63,9 +63,10 @@
  }
  .flipAnimation .cardBack {
   backface-visibility: hidden;
+  border-radius: 6px;
   background: #17a1ab;
   color: black;
-  line-height: 230px;
+  line-height: 195px;
   text-align: center;
   transform: rotateY(180deg);
  }

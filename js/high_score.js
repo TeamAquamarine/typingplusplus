@@ -14,7 +14,6 @@ rankedArray.sort(function(a,b) {
   return a.highScore - b.highScore;
 });
 rankedArray = rankedArray.reverse();
-console.log(rankedArray);
 
 //render header row function
 function createHeaderRow() {
@@ -37,6 +36,7 @@ function createTableBody() {
   //create row for each player in array
   for (var i = 0; i < 10; i++ ) {
     //add player name
+    trEl = document.createElement('tr');
     tdEl = document.createElement('td');
     tdEl.textContent = (rankedArray[i].name);
     trEl.appendChild(tdEl);
@@ -54,3 +54,5 @@ function renderTable() {
   createHeaderRow();
   createTableBody();
 }
+
+renderTable();
