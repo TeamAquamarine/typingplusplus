@@ -33,13 +33,16 @@
     <section id="homeSection">
       <img src="./images/logo_home.png" alt="Big logo with tilted last box">
       <form>
-        <form action="/action_page.php">
         <input type="text" name="fname" placeholder="Player Name" id="playerNameInput" required>
-        <button id="playGameButton">Play</button>
-        <button>
-          <a href="./html/game.html">High Score</a>
-        </button>
-      </form>
+
+        <a href="./html/game.html" ><button id="playGameButton" type="submit" >Play 
+        </button></a>
+        <a href="./html/high_score.html">
+          <div id="highScoreButton">
+            High Score
+          </div>
+        </a>
+
       </form>
     </section>
   </main>

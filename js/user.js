@@ -30,7 +30,7 @@ User.prototype.storeLocal = function() {
 *     Listener/Handler for User    *
 ************************************/
 //listener/handler to create user objects
-playButton.addEventListener('click', createUserObject);
+playButton.addEventListener('submit', createUserObject);
 
 // Creates a new user and saves to local storage when name is inputted and play is clicked
 function createUserObject(event){
