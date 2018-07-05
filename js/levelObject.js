@@ -10,7 +10,6 @@ var levelArray = [];
 var currentScore = document.getElementById('score');
 var currentLevelRender = document.getElementById('level');
 var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-console.log(currentUser.level);
 var levelOnePrompts = ['a + b', 'b - c', 'c * d'];
 var levelTwoPrompts = ['e / f', 'f % g', 'g +=1'];
 // var levelOnePrompts = ['var i = 0', 'console.log', 'function winLevel(){}'];
@@ -49,7 +48,9 @@ Level.prototype.render = function () {
   promptTextNode.textContent = currentPrompt;
   typingInputNode.value = '';
   currentPromptChar = 0;
-
+  renderLevel();
+  renderScore();
+  
   // Start timer
 };
 
@@ -57,9 +58,7 @@ Level.prototype.render = function () {
 typingInputNode.addEventListener('focus', startTimerHandler);
 
 function startTimerHandler() {
-  console.log('in event handler');
   parsedCurrentPrompt = currentLevel.parsePrompt(currentPrompt);
-  console.log(parsedCurrentPrompt);
   if (currentLevel.timer.timeRemaining === currentLevel.timer.totalTime) {
     currentLevel.timer.startTimer();
   } else {
@@ -74,7 +73,6 @@ typingInput.addEventListener('animationend', refreshShake);
 
 //this is our function to validate text
 function textValidation(event) {
-  console.log(event.key);
   event.preventDefault();
   var keyPressed = event.key;
   if (keyPressed !== parsedCurrentPrompt[currentPromptChar]) {
@@ -100,9 +98,7 @@ function winLevel() {
   //adds to high score and increments the level
   if (currentPromptChar == parsedCurrentPrompt.length) {
     currentUser.highScore += 1000000;
-    renderLevel();
     currentUser.level++;
-    renderScore();
     currentLevel.timer.stopTimer();
     typingInputNode.blur();
     updateLocalStorage();
@@ -112,7 +108,6 @@ function winLevel() {
     } else {
       levelArray[currentUser.level - 1].render();
       currentLevel.timer.resetTimer();
-      console.log(parsedCurrentPrompt);
     }
 
   }
@@ -120,6 +115,13 @@ function winLevel() {
 
 
 //current score render
+
+function updateLocalStorage() {
+  userArray = userArray.filter(x => !(x.name === currentUser.name));
+  userArray.push(currentUser);
+  localStorage.setItem('users', JSON.stringify(userArray));
+};
+
 function renderScore() {
   var ulEl = document.createElement('ul');
   var liEl = document.createElement('li');
@@ -132,10 +134,4 @@ function renderLevel() {
   var liEl = document.createElement('li');
   level.textContent = ('Level: ' + currentUser.level);
   ulEl.appendChild(liEl);
-
-function updateLocalStorage(){
-  userArray = userArray.filter(x => !(x.name === currentUser.name));
-  userArray.push(currentUser);
-  localStorage.setItem('users', JSON.stringify(userArray));
-
 };

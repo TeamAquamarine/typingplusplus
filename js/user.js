@@ -2,10 +2,7 @@
 //globals
 
 var userNode = document.getElementById('playerNameInput');
-console.log(userNode);
 var playButton = document.getElementById('playForm');
-console.log(playButton);
-console.log(event);
 var defaultScore = 999990;
 // Grab users array from local storage or create an empty array if nothing is stored
 var userArray = JSON.parse(localStorage.getItem('users') || '[]');
@@ -43,7 +40,7 @@ function createUserObject(event){
   userArray.push(currentUser);
   localStorage.setItem('users', JSON.stringify(userArray));
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
-  window.location.href = './html/game.html';
+  window.location.href = '../html/game.html';
 }
 
 /********************************************************************************
