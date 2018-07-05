@@ -1,8 +1,22 @@
 table {
+  width: 50%;
+  margin: 10px auto;
   background: #17a1ab;
   color: white;
+  border-radius: 6px;
 }
 
 table, th, td {
   border: 1px solid white;
+}
+
+th {
+  height: 60px;
+  line-height: 60px;
+}
+
+td {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 25px;
 }
