@@ -6,25 +6,25 @@
 
 #sharonCard {
  position: absolute;
- top: 310px; 
+ top: 300px; 
  left: 310px;
 }
 
 #alexCard {
   position: absolute;
-  top: 310px; 
+  top: 300px; 
   left: 40px;
  }
 
  #meganCard {
   position: absolute;
-  top: 40px; 
+  top: 30px; 
   left: 240px;
  }
 
  #connorCard {
   position: absolute;
-  top: 310px; 
+  top: 300px; 
   left: 580px;
   transform: rotate(15deg);
   transition-duration: 0.8s;
