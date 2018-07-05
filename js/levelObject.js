@@ -7,6 +7,8 @@ var currentPrompt;
 var currentPromptChar = 0;
 var parsedCurrentPrompt;
 var levelArray = [];
+var currentScore = document.getElementById('score');
+var currentLevelRender = document.getElementById('level');
 var currentUser = JSON.parse(localStorage.getItem('currentUser'));
 console.log(currentUser.level);
 var levelOnePrompts = ['a + b', 'b - c', 'c * d'];
@@ -98,7 +100,9 @@ function winLevel() {
   //adds to high score and increments the level
   if (currentPromptChar == parsedCurrentPrompt.length) {
     currentUser.highScore += 1000000;
+    renderLevel();
     currentUser.level++;
+    renderScore();
     currentLevel.timer.stopTimer();
     typingInputNode.blur();
     updateLocalStorage();
@@ -110,11 +114,28 @@ function winLevel() {
       currentLevel.timer.resetTimer();
       console.log(parsedCurrentPrompt);
     }
+
   }
 }
+
+
+//current score render
+function renderScore() {
+  var ulEl = document.createElement('ul');
+  var liEl = document.createElement('li');
+  score.textContent = ('Score: ' + currentUser.highScore);
+  ulEl.appendChild(liEl);
+};
+
+function renderLevel() {
+  var ulEl = document.createElement('ul');
+  var liEl = document.createElement('li');
+  level.textContent = ('Level: ' + currentUser.level);
+  ulEl.appendChild(liEl);
 
 function updateLocalStorage(){
   userArray = userArray.filter(x => !(x.name === currentUser.name));
   userArray.push(currentUser);
   localStorage.setItem('users', JSON.stringify(userArray));
+
 };
