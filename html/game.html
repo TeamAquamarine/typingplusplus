@@ -35,24 +35,25 @@
     <section id="gameContent">
 
       <section id="promptSection">
+        <p id="promptText"></p>
       </section>
       <h2>Welcome to our game, begin typing below to begin:</h2>
       <section id="typingSection">
-        <form id="input-shake">
+        <form id="input-shake" autocomplete="off">
           <input type="text" placeholder="Click here to start timer" id="typingInput">
         </form>
       </section>
     </section>
     <aside>
       <section id="highScoreSection">
-        <h2>Score:</h2>
-        <h2>Level:</h2>
+        <h2 id="score">Score:</h2>
+        <h2 id="level">Level:</h2>
       </section>
       <section id="timerSection">
         <img id="timerImage">
-        <div id="timerBar"></div>
-        <img id="purpleBug" src="../images/purpleBug.png" alt="Bug">
-        <img id="greenBug" src="../images/greenbug.png" alt="Bug">
+        <div id="timerBar"> <img id="purpleBug" src="../images/purpleBug.png" alt="Bug">
+          <img id="greenBug" src="../images/greenbug.png" alt="Bug"></div>
+       
         <img id="flames" src="../images/Flames.png" alt="Flames">
       </section>
     </aside>

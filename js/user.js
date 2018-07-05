@@ -1,7 +1,8 @@
 'use strict';
 //globals
+
 var userNode = document.getElementById('playerNameInput');
-var playButton = document.getElementById('playGameButton');
+var playButton = document.getElementById('playForm');
 var defaultScore = 999990;
 // Grab users array from local storage or create an empty array if nothing is stored
 var userArray = JSON.parse(localStorage.getItem('users') || '[]');
@@ -31,14 +32,15 @@ User.prototype.storeLocal = function() {
 ************************************/
 //listener/handler to create user objects
 playButton.addEventListener('submit', createUserObject);
-
 // Creates a new user and saves to local storage when name is inputted and play is clicked
 function createUserObject(event){
+  console.log(event);
   event.preventDefault();
   currentUser = new User(userNode.value);
   userArray.push(currentUser);
   localStorage.setItem('users', JSON.stringify(userArray));
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
+  window.location.href = '../html/game.html';
 }
 
 /********************************************************************************
@@ -58,17 +60,18 @@ function createDefaultUser (name){
 function populateUserArray (defaultScore){
   createDefaultUser('Jasper', defaultScore);
   createDefaultUser('Declan', defaultScore);
-  createDefaultUser('Sadie', defaultScore);
+  createDefaultUser('McKenzie', defaultScore);
   createDefaultUser('Finley', defaultScore);
   createDefaultUser('Brooklyn', defaultScore);
   createDefaultUser('Gabe', defaultScore);
   createDefaultUser('Evelyn', defaultScore);
   createDefaultUser('Jameson', defaultScore);
   createDefaultUser('Isla', defaultScore);
-  createDefaultUser('Nicholas', defaultScore);
+  createDefaultUser('Zach', defaultScore);
 }
 
-//calls the populate default users in not in storage already
+// calls the populate default users in not in storage
 if (!localStorage.getItem('users')){
   populateUserArray();
 }
+
