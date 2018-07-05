@@ -104,7 +104,7 @@ function winLevel() {
     updateLocalStorage();
     //end of game send user to high score and generate table
     if (currentUser.level > levelArray.length) {
-      window.location.href = '../html/high_score.html';
+      window.location.href = 'https://teamaquamarine.github.io/html/high_score.html';
     } else {
       levelArray[currentUser.level - 1].render();
       currentLevel.timer.resetTimer();
