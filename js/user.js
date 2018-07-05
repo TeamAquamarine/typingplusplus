@@ -40,7 +40,7 @@ function createUserObject(event){
   userArray.push(currentUser);
   localStorage.setItem('users', JSON.stringify(userArray));
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
-  window.location.href = './typingplusplus/html/game.html';
+  window.location.href = './html/game.html';
 }
 
 /********************************************************************************
