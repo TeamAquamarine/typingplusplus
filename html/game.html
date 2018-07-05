@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Play Typing ++</title>
+  <link href="https://fonts.googleapis.com/css?family=Boogaloo|Roboto" rel="stylesheet">
+  <link href="../css/reset.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/timer.css" rel="stylesheet">
+  <link href="../css/game.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <img src="../images/logo_nav.png" alt="Typing ++ Logo">
+      <ul>
+        <li>
+          <a href="../index.html">HOME</a>
+        </li>
+        <li>
+          <a href="./high_score.html">HIGH SCORE</a>
+        </li>
+        <li>
+          <a href="./about_us.html">MEET THE TEAM</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main id="gamePage">
+
+    <section id="gameContent">
+
+      <section id="promptSection">
+        <p id="promptText"></p>
+      </section>
+      <h2>Welcome to our game, begin typing below to begin:</h2>
+      <section id="typingSection">
+        <form id="input-shake" autocomplete="off">
+          <input type="text" placeholder="Click here to start timer" id="typingInput">
+        </form>
+      </section>
+    </section>
+    <aside>
+      <section id="highScoreSection">
+        <h2 id="score">Score:</h2>
+        <h2 id="level">Level:</h2>
+      </section>
+      <section id="timerSection">
+        <img id="timerImage">
+        <div id="timerBar"> <img id="purpleBug" src="../images/purpleBug.png" alt="Bug">
+          <img id="greenBug" src="../images/greenbug.png" alt="Bug"></div>
+       
+        <img id="flames" src="../images/Flames.png" alt="Flames">
+      </section>
+    </aside>
+  </main>
+  <script src="../js/timer.js"></script>
+  <script src="../js/levelObject.js"></script>
+  <script src="../js/inputvalidation.js"></script>
+  <script src="../js/user.js"></script>
+</body>
+
+</html>

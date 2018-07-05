@@ -1,0 +1,131 @@
+  /* teal color #17a1ab */
+/* $primary: #17a1ab;
+$secondary: #434343;  */
+
+body {
+  max-width: 100%;
+  font-family: 'Muli', sans-serif;
+  background: white;
+  margin: auto;
+}
+
+main {
+  max-width: 960px;
+  margin: 10px auto;
+}
+
+nav {
+background: #17a1ab;
+height: 70px;
+margin-top: 30px;
+max-width: 100%;
+/* align-content: center; */
+position: relative;
+}
+
+nav img {
+  display:inline-block;
+  /* float:; */
+  max-height: 70px;
+  /* margin-top: top -3px; */
+  margin-left:20px;
+}
+nav ul{
+  float: left;
+  color: white;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 35%;
+  left:10%;
+  letter-spacing: .30;
+}
+nav li{
+  display: inline;
+  padding: 20px;
+}
+li a{
+  color:white;
+  text-decoration: none;
+  margin-top: 33px;
+}
+li a:hover {
+  background-color: default;
+  color: rgb(61, 61, 92);
+}
+
+#homeSection{
+  position: relative;
+  top: 10%;
+  left: 30%; 
+}
+#logo{
+  position: absolute;
+  top: 5px;
+  left: 0px;
+
+}
+#playerNameInput{
+  position: absolute;
+  top: 418px;
+  left: 35px;
+  width: 300px;
+  height: 30px;
+  display: block;
+  clear: both;
+  margin: auto;
+  border-radius: 1em;
+}
+#playGameButton {
+  position: absolute;
+  top: 490px;
+  left: 50px;
+  padding:.3em 2em;
+  border-radius:1em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:inherit;
+  font-size: 12px;
+  font-weight:200;
+  color:#FFFFFF;
+  background-color: #17a1ab;
+  text-align:center;
+  transition: all 0.2s;
+  width: 120px;
+  }
+  #highScoreButton {
+    position: absolute;
+    top: 491px;
+    left: 200px;
+    /* margin: 2em 3.5em 0em -.6em; */
+    /* display:inline-block; */
+    padding:.4em 2em;
+    border-radius:1em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:inherit;
+    font-size: 12px;
+    font-weight:200;
+    color:#FFFFFF;
+    background-color: #17a1ab;
+    text-align:center;
+    transition: all 0.2s;
+    width: 120px;
+    /* border: .5px solid grey; */
+    box-shadow: 0px 0px 0px .5px grey;
+    
+    }
+  a{
+    margin: auto;
+    text-decoration:none;
+    color: white;
+    
+  }
+  button:hover{
+  background-color: white;
+  color: #17a1ab;
+  }
+  button a:hover{
+    background-color: white;
+    color: #17a1ab;
+    }

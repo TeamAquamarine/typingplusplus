@@ -1,0 +1,18 @@
+#timerBar {
+  width: 100px;
+  height: 600px;
+  /* background: rgb(199, 43, 43); */
+  background: linear-gradient(to bottom, #ff3300 0%, #990000 100%);
+  transform-origin: bottom;
+  animation-fill-mode: both;
+}
+
+@keyframes timerBar{
+  from {
+    transform: scaleY(1);
+  }
+
+  to {
+    transform: scaleY(0.0);
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Typing ++</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/inputvalidation.css" />
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <img src="./images/logo_nav.png" alt="Typing ++ Logo">
+      <ul>
+        <li>
+          <a href="./index.html">HOME</a>
+        </li>
+        <li>
+          <a href="./html/high_score.html">HIGH SCORE</a>
+        </li>
+        <li>
+          <a href="./html/about_us.html">MEET THE TEAM</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="homeSection">
+      <img id="logo" src="./images/logo_home.png" alt="Big logo with tilted last box">
+      <form action="./html/game.html" method="get" id="playForm" autocomplete="off">
+        <input type="text" name="fname" placeholder="Player Name" id="playerNameInput" required>
+
+          <button id="playGameButton" type="submit">Play
+          </button>
+
+      </form>
+      <a href="./html/high_score.html">
+        <div id="highScoreButton">
+          High Score </a>
+        </div>
+    </section>
+  </main>
+  <footer>
+  </footer>
+  <script src="./js/user.js"></script>
+  <script src="./js/levelObject.js"></script>
+  <script src="./js/high_score.js"></script>
+</body>
+
+</html>

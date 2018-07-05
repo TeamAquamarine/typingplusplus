@@ -10,7 +10,7 @@ Your project's name and concept
 - Typing ++ - a typing app for developers to improve their code typing dexterity.
 
 A diagram of your project's domain model (we'll do a sample in class)
-<img src="./images/IMG_5302.jpg")>
+![Image of project plan](./images/IMG_5302.jpg)
 
 
 An exhaustive explanation of how your team plans to address details in the problem domain, ideally to the detail level of listing the data collections and functions you'll need.
