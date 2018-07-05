@@ -59,7 +59,7 @@ left:0;
 width: 150px;
 max-height: 372px;
 }
-
+/*TODO: overflow hidden in container so bugs dont squish */
 #flames {
   position:absolute;
   left:0;
