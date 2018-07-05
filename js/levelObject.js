@@ -10,10 +10,15 @@ var levelArray = [];
 var currentScore = document.getElementById('score');
 var currentLevelRender = document.getElementById('level');
 var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-var levelOnePrompts = ['a + b', 'b - c', 'c * d'];
-var levelTwoPrompts = ['e / f', 'f % g', 'g +=1'];
-// var levelOnePrompts = ['var i = 0', 'console.log', 'function winLevel(){}'];
-// var levelTwoPrompts = ['document.getElementById', 'event.preventDefault();', 'if (!localStorage.getItem)'];
+// var levelOnePrompts = ['a + b', 'b - c', 'c * d'];
+// var levelTwoPrompts = ['e / f', 'f % g', 'g +=1'];
+var levelOnePrompts = ['var i = 0;', 'console.log()', 'function winLevel(){}'];
+var levelTwoPrompts = ['document.getElementById();', 'event.preventDefault();', 'if (!localStorage.getItem){}'];
+var levelThreePrompts = ['function User(name){ this.name = name;}','this.highscore = 0; this.level = 1;'];
+var levelFourPrompts = ['<p>Hi, how are you?</p>', '<h1>This is a header!</h1>'];
+var levelFivePrompts = ['p { color: red }', 'git push origin master', 'mkdir newfolder'];
+var levelSixPrompts = ['p { font-family: arial }', 'git checkout -b tuesdayBranch', '#playerOne { color: blue }'];
+var levelSevenPrompts = ['git commit -m "this is the best commit ever"', 'cd../..'];
 /***********************************
 *     DOM access nodes             *
 ************************************/
@@ -91,6 +96,11 @@ function refreshShake() {
 //new levels
 new Level(currentUser.level, levelOnePrompts, 10);
 new Level(currentUser.level, levelTwoPrompts, 20);
+new Level(currentUser.level, levelThreePrompts, 30);
+new Level(currentUser.level, levelFourPrompts, 30);
+new Level(currentUser.level, levelFivePrompts, 30);
+new Level(currentUser.level, levelSixPrompts, 30);
+new Level(currentUser.level, levelSevenPrompts, 30);
 // render level one
 levelArray[0].render();
 
