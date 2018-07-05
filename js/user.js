@@ -1,5 +1,6 @@
 'use strict';
 //globals
+
 var userNode = document.getElementById('playerNameInput');
 console.log(userNode);
 var playButton = document.getElementById('playForm');
@@ -76,3 +77,4 @@ function populateUserArray (defaultScore){
 if (!localStorage.getItem('users')){
   populateUserArray();
 }
+
