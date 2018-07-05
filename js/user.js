@@ -1,7 +1,9 @@
 'use strict';
 //globals
 var userNode = document.getElementById('playerNameInput');
-var playButton = document.getElementById('playGameButton');
+console.log(userNode);
+var playButton = document.getElementById('playForm');
+console.log(playButton);
 var defaultScore = 999990;
 // Grab users array from local storage or create an empty array if nothing is stored
 var userArray = JSON.parse(localStorage.getItem('users') || '[]');
@@ -31,14 +33,15 @@ User.prototype.storeLocal = function() {
 ************************************/
 //listener/handler to create user objects
 playButton.addEventListener('submit', createUserObject);
-
 // Creates a new user and saves to local storage when name is inputted and play is clicked
 function createUserObject(event){
+  console.log(event);
   event.preventDefault();
   currentUser = new User(userNode.value);
   userArray.push(currentUser);
   localStorage.setItem('users', JSON.stringify(userArray));
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
+  window.location.href = './html/game.html';
 }
 
 /********************************************************************************

@@ -32,23 +32,22 @@
   <main>
     <section id="homeSection">
       <img src="./images/logo_home.png" alt="Big logo with tilted last box">
-      <form>
+      <form action="./html/game.html" method="get" id="playForm">
         <input type="text" name="fname" placeholder="Player Name" id="playerNameInput" required>
 
-        <a href="./html/game.html" ><button id="playGameButton" type="submit" >Play 
-        </button></a>
-        <a href="./html/high_score.html">
-          <div id="highScoreButton">
-            High Score
-          </div>
-        </a>
+          <button id="playGameButton" type="submit">Play
+          </button>
 
       </form>
+      <a href="./html/high_score.html">
+        <div id="highScoreButton">
+          High Score
+        </div>
+      </a>
     </section>
   </main>
   <footer>
   </footer>
-  <script src="./js/inputvalidation.js"></script>
   <script src="./js/user.js"></script>
   <script src="./js/levelObject.js"></script>
   <script src="./js/high_score.js"></script>
