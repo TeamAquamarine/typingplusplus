@@ -50,7 +50,7 @@ Level.prototype.render = function () {
   currentPromptChar = 0;
   renderLevel();
   renderScore();
-  
+
   // Start timer
 };
 
@@ -92,7 +92,7 @@ function refreshShake() {
 new Level(currentUser.level, levelOnePrompts, 10);
 new Level(currentUser.level, levelTwoPrompts, 20);
 // render level one
-levelArray[0].render();
+levelArray[currentUser.level - 1].render();
 
 function winLevel() {
   //adds to high score and increments the level
