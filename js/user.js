@@ -4,6 +4,7 @@ var userNode = document.getElementById('playerNameInput');
 console.log(userNode);
 var playButton = document.getElementById('playForm');
 console.log(playButton);
+console.log(event);
 var defaultScore = 999990;
 // Grab users array from local storage or create an empty array if nothing is stored
 var userArray = JSON.parse(localStorage.getItem('users') || '[]');
@@ -61,17 +62,17 @@ function createDefaultUser (name){
 function populateUserArray (defaultScore){
   createDefaultUser('Jasper', defaultScore);
   createDefaultUser('Declan', defaultScore);
-  createDefaultUser('Sadie', defaultScore);
+  createDefaultUser('McKenzie', defaultScore);
   createDefaultUser('Finley', defaultScore);
   createDefaultUser('Brooklyn', defaultScore);
   createDefaultUser('Gabe', defaultScore);
   createDefaultUser('Evelyn', defaultScore);
   createDefaultUser('Jameson', defaultScore);
   createDefaultUser('Isla', defaultScore);
-  createDefaultUser('Nicholas', defaultScore);
+  createDefaultUser('Zach', defaultScore);
 }
 
-//calls the populate default users in not in storage already
+// calls the populate default users in not in storage
 if (!localStorage.getItem('users')){
   populateUserArray();
 }

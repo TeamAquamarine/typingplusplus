@@ -24,6 +24,7 @@ Timer.prototype.countDown = function () {
       _this.timeRemaining--;
       console.log(_this.timeRemaining);
     } else {
+      window.location.href = '../html/high_score.html';
       clearInterval(timeInterval);
     }
   }, 1000);
