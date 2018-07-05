@@ -20,7 +20,6 @@ var levelTwoPrompts = ['e / f', 'f % g', 'g +=1'];
 ************************************/
 
 var typingInputNode = document.getElementById('typingInput');
-var codePromptNode = document.getElementById('promptSection');
 var promptTextNode = document.getElementById('promptText');
 
 /***********************************
@@ -106,6 +105,7 @@ function winLevel() {
     renderScore();
     currentLevel.timer.stopTimer();
     typingInputNode.blur();
+    updateLocalStorage();
     //end of game send user to high score and generate table
     if (currentUser.level > levelArray.length) {
       window.location.href = '../html/high_score.html';
@@ -117,6 +117,7 @@ function winLevel() {
 
   }
 }
+
 
 //current score render
 function renderScore() {
@@ -131,4 +132,10 @@ function renderLevel() {
   var liEl = document.createElement('li');
   level.textContent = ('Level: ' + currentUser.level);
   ulEl.appendChild(liEl);
+
+function updateLocalStorage(){
+  userArray = userArray.filter(x => !(x.name === currentUser.name));
+  userArray.push(currentUser);
+  localStorage.setItem('users', JSON.stringify(userArray));
+
 };
