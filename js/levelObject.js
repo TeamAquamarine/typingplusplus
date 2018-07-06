@@ -108,7 +108,7 @@ levelArray[currentUser.level - 1].render();
 function winLevel() {
   //adds to high score and increments the level
   if (currentPromptChar == parsedCurrentPrompt.length) {
-    currentUser.highScore += 1000000 * (currentLevel.timer.timeRemaining / currentLevel.timer.totalTime);
+    currentUser.highScore += Math.floor(1000000 * (currentLevel.timer.timeRemaining / currentLevel.timer.totalTime));
     currentUser.level++;
     currentLevel.timer.stopTimer();
     typingInputNode.blur();
