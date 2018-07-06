@@ -7,6 +7,7 @@
 // global variables
 var tableNode = document.getElementById('highScore');
 var playerArray = JSON.parse(localStorage.getItem('highScoreArray'));
+var highScoreHeader = document.getElementById('highScoreHeader');
 
 //sort playerArray
 var rankedArray = playerArray.slice();
@@ -51,6 +52,7 @@ function createTableBody() {
 
 //renders table
 function renderTable() {
+  highScoreHeader.textContent = JSON.parse(localStorage.getItem('highScoreMsg'));
   createHeaderRow();
   createTableBody();
 }

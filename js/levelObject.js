@@ -98,10 +98,10 @@ function refreshShake() {
 new Level(currentUser.level, levelOnePrompts, 10);
 new Level(currentUser.level, levelTwoPrompts, 20);
 new Level(currentUser.level, levelThreePrompts, 30);
-new Level(currentUser.level, levelFourPrompts, 30);
-new Level(currentUser.level, levelFivePrompts, 30);
-new Level(currentUser.level, levelSixPrompts, 30);
-new Level(currentUser.level, levelSevenPrompts, 30);
+// new Level(currentUser.level, levelFourPrompts, 30);
+// new Level(currentUser.level, levelFivePrompts, 30);
+// new Level(currentUser.level, levelSixPrompts, 30);
+// new Level(currentUser.level, levelSevenPrompts, 30);
 // render level one
 levelArray[currentUser.level - 1].render();
 
@@ -120,7 +120,10 @@ function winLevel() {
       currentUser.level = 1;
       currentUser.highScore = 0;
       updateLocalStorage();
+      var winMsg = 'Congratulations, ' + currentUser.name + '! You\'re hired!';
+      localStorage.setItem('highScoreMsg', JSON.stringify(winMsg));
       window.location.href = '../html/high_score.html';
+      highScoreHeader.textContent = 'CONGRATULATIONS, ' + currentUser.name + '! You\'re hired!';
     } else {
       levelArray[currentUser.level - 1].render();
       currentLevel.timer.resetTimer();
