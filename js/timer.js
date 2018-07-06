@@ -30,7 +30,8 @@ Timer.prototype.countDown = function () {
       currentUser.highScore = 0;
 
       localStorage.setItem('highScoreMsg', JSON.stringify(loseMsg));
-      window.location.href = '../html/high_score.html';
+      window.location.href = 'https://teamaquamarine.github.io/html/high_score.html';
+
       clearInterval(timeInterval);
     }
   }, 1000);

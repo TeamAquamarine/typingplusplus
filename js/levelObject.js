@@ -146,9 +146,8 @@ function winLevel() {
 
       var winMsg = 'Congratulations, ' + currentUser.name + '! You\'re promoted!';
       localStorage.setItem('highScoreMsg', JSON.stringify(winMsg));
-      window.location.href = '../html/high_score.html';
-      highScoreHeader.textContent = 'CONGRATULATIONS, ' + currentUser.name + '! You\'re promoted!';
-      
+      window.location.href = 'https://teamaquamarine.github.io/html/high_score.html';
+
     } else {
       levelArray[currentUser.level - 1].render();
       currentLevel.timer.resetTimer();
