@@ -74,7 +74,7 @@ function startTimerHandler() {
 
 //creating the event listeners for the validation input box
 var typingInput = document.getElementById('typingInput');
-typingInput.addEventListener('keypress', textValidation);
+typingInput.addEventListener('keydown', textValidation);
 typingInput.addEventListener('animationend', refreshShake);
 //if keypress = ==8 then --currentpromptchar
 
@@ -83,13 +83,24 @@ function textValidation(event) {
   event.preventDefault(); 
   // debugger;
   var keyPressed = event.key;
-  if (keyPressed !== parsedCurrentPrompt[currentPromptChar]) {
+  var keyCode = event.keyCode;
+  if(keyCode == 8){
+    typingInput.classList.add('shake');
+  } else if (keyPressed !== parsedCurrentPrompt[currentPromptChar]) {
     typingInput.classList.add('shake');
   } else {
     typingInput.value += keyPressed;
     currentPromptChar++;
     winLevel();
   }
+}
+
+function backspaceHandler(event) {
+  event.preventDefault();
+  if(event.keyCode == 8){
+    currentPromptChar--;
+  }
+}
   // LOOK HERE CONNOR+++++++++=========================================================
 //                     if (keyCode == 8) {
 //                       currentPromptChar--;
