@@ -7,6 +7,7 @@ var currentPrompt;
 var currentPromptChar = 0;
 var parsedCurrentPrompt;
 var levelArray = [];
+var highScoreArray = JSON.parse(localStorage.getItem('highScoreArray') || '[]');
 var currentScore = document.getElementById('score');
 var currentLevelRender = document.getElementById('level');
 var currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -55,7 +56,7 @@ Level.prototype.render = function () {
   currentPromptChar = 0;
   renderLevel();
   renderScore();
-  
+
   // Start timer
 };
 
@@ -112,18 +113,23 @@ new Level(currentUser.level, levelFivePrompts, 30);
 new Level(currentUser.level, levelSixPrompts, 30);
 new Level(currentUser.level, levelSevenPrompts, 30);
 // render level one
-levelArray[0].render();
+levelArray[currentUser.level - 1].render();
 
 function winLevel() {
   //adds to high score and increments the level
   if (currentPromptChar == parsedCurrentPrompt.length) {
-    currentUser.highScore += 1000000;
+    currentUser.highScore += Math.floor(1000000 * (currentLevel.timer.timeRemaining / currentLevel.timer.totalTime));
     currentUser.level++;
     currentLevel.timer.stopTimer();
     typingInputNode.blur();
     updateLocalStorage();
     //end of game send user to high score and generate table
     if (currentUser.level > levelArray.length) {
+      highScoreArray.push(currentUser);
+      localStorage.setItem('highScoreArray', JSON.stringify(highScoreArray));
+      currentUser.level = 1;
+      currentUser.highScore = 0;
+      updateLocalStorage();
       window.location.href = '../html/high_score.html';
     } else {
       levelArray[currentUser.level - 1].render();

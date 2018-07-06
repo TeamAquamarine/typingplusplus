@@ -6,7 +6,7 @@
 
 // global variables
 var tableNode = document.getElementById('highScore');
-var playerArray = JSON.parse(localStorage.getItem('users'));
+var playerArray = JSON.parse(localStorage.getItem('highScoreArray'));
 
 //sort playerArray
 var rankedArray = playerArray.slice();
