@@ -30,7 +30,7 @@ Timer.prototype.countDown = function () {
       currentUser.highScore = 0;
 
       localStorage.setItem('highScoreMsg', JSON.stringify(loseMsg));
-      window.location.href = 'html/high_score.html';
+      window.location.href = 'high_score.html';
 
       clearInterval(timeInterval);
     }
