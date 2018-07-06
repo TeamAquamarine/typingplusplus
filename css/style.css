@@ -76,13 +76,13 @@ li a:hover {
   margin: auto;
   border-radius: 1em;
 }
-input[type=text], textarea {
+#playerNameInput input[type=text], textarea {
   outline: none;
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
   border: 1px solid #DDDDDD;
 }
-input[type=text]:focus, textarea:focus {
+#playerNameInput input[type=text]:focus, textarea:focus {
   box-shadow: 0 0 5px #17a1ab;
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;

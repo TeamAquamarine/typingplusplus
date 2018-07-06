@@ -76,7 +76,7 @@ max-height: 372px;
   max-width: 80px;
 }
 #greenBug {
-  position:absolute;
+  position:relative;
   left:50px;
   top:-13px;
   max-width: 80px;
