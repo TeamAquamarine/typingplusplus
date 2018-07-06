@@ -120,7 +120,7 @@ function winLevel() {
       currentUser.level = 1;
       currentUser.highScore = 0;
       updateLocalStorage();
-      window.location.href = '../html/high_score.html';
+      window.location.href = 'https://teamaquamarine.github.io/html/high_score.html';
     } else {
       levelArray[currentUser.level - 1].render();
       currentLevel.timer.resetTimer();
@@ -128,8 +128,6 @@ function winLevel() {
 
   }
 }
-
-
 //current score render
 
 function updateLocalStorage() {
