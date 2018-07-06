@@ -122,10 +122,10 @@ function winLevel() {
       currentUser.level = 1;
       currentUser.highScore = 0;
       updateLocalStorage();
-      var winMsg = 'Congratulations, ' + currentUser.name + '! You\'re hired!';
+      var winMsg = 'Congratulations, ' + currentUser.name + '! You\'re promoted!';
       localStorage.setItem('highScoreMsg', JSON.stringify(winMsg));
       window.location.href = '../html/high_score.html';
-      highScoreHeader.textContent = 'CONGRATULATIONS, ' + currentUser.name + '! You\'re hired!';
+      highScoreHeader.textContent = 'CONGRATULATIONS, ' + currentUser.name + '! You\'re promoted!';
     } else {
       levelArray[currentUser.level - 1].render();
       currentLevel.timer.resetTimer();
