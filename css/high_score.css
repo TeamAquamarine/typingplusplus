@@ -20,3 +20,9 @@ td {
   line-height: 30px;
   padding-left: 25px;
 }
+
+#highScoreHeader {
+  margin: 15px;
+  text-align: center;
+  font-size: 2em;
+}

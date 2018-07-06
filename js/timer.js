@@ -24,6 +24,8 @@ Timer.prototype.countDown = function () {
       _this.timeRemaining--;
       console.log(_this.timeRemaining);
     } else {
+      var loseMsg = 'Sorry, ' + currentUser.name + '... You\'re fired!';
+      localStorage.setItem('highScoreMsg', JSON.stringify(loseMsg));
       window.location.href = '../html/high_score.html';
       clearInterval(timeInterval);
     }

@@ -113,22 +113,24 @@ function backspaceHandler(event) {
 //this is our function which allows the validation input box to continue shaking
 function refreshShake() {
   typingInput.classList.remove('shake');
+  typingInput.classList.remove('flashGreen');
 }
 
 //new levels
 new Level(currentUser.level, levelOnePrompts, 10);
 new Level(currentUser.level, levelTwoPrompts, 20);
 new Level(currentUser.level, levelThreePrompts, 30);
-new Level(currentUser.level, levelFourPrompts, 30);
-new Level(currentUser.level, levelFivePrompts, 30);
-new Level(currentUser.level, levelSixPrompts, 30);
-new Level(currentUser.level, levelSevenPrompts, 30);
+// new Level(currentUser.level, levelFourPrompts, 30);
+// new Level(currentUser.level, levelFivePrompts, 30);
+// new Level(currentUser.level, levelSixPrompts, 30);
+// new Level(currentUser.level, levelSevenPrompts, 30);
 // render level one
 levelArray[currentUser.level - 1].render();
 
 function winLevel() {
   //adds to high score and increments the level
   if (currentPromptChar == parsedCurrentPrompt.length) {
+    typingInputNode.classList.add('flashGreen');
     currentUser.highScore += Math.floor(1000000 * (currentLevel.timer.timeRemaining / currentLevel.timer.totalTime));
     currentUser.level++;
     currentLevel.timer.stopTimer();
@@ -141,7 +143,10 @@ function winLevel() {
       currentUser.level = 1;
       currentUser.highScore = 0;
       updateLocalStorage();
+      var winMsg = 'Congratulations, ' + currentUser.name + '! You\'re promoted!';
+      localStorage.setItem('highScoreMsg', JSON.stringify(winMsg));
       window.location.href = '../html/high_score.html';
+      highScoreHeader.textContent = 'CONGRATULATIONS, ' + currentUser.name + '! You\'re promoted!';
     } else {
       levelArray[currentUser.level - 1].render();
       currentLevel.timer.resetTimer();
