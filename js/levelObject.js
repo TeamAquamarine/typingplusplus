@@ -92,6 +92,7 @@ function textValidation(event) {
 //this is our function which allows the validation input box to continue shaking
 function refreshShake() {
   typingInput.classList.remove('shake');
+  typingInput.classList.remove('flashGreen');
 }
 
 //new levels
@@ -108,6 +109,7 @@ levelArray[currentUser.level - 1].render();
 function winLevel() {
   //adds to high score and increments the level
   if (currentPromptChar == parsedCurrentPrompt.length) {
+    typingInputNode.classList.add('flashGreen');
     currentUser.highScore += Math.floor(1000000 * (currentLevel.timer.timeRemaining / currentLevel.timer.totalTime));
     currentUser.level++;
     currentLevel.timer.stopTimer();
