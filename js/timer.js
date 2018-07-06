@@ -28,6 +28,7 @@ Timer.prototype.countDown = function () {
       highScoreArray.push(currentUser);
       localStorage.setItem('highScoreArray', JSON.stringify(highScoreArray));
       currentUser.highScore = 0;
+
       localStorage.setItem('highScoreMsg', JSON.stringify(loseMsg));
       window.location.href = '../html/high_score.html';
       clearInterval(timeInterval);
