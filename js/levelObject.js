@@ -74,14 +74,19 @@ function startTimerHandler() {
 
 //creating the event listeners for the validation input box
 var typingInput = document.getElementById('typingInput');
-typingInput.addEventListener('keypress', textValidation);
+typingInput.addEventListener('keydown', textValidation);
 typingInput.addEventListener('animationend', refreshShake);
+//if keypress = ==8 then --currentpromptchar
 
 //this is our function to validate text
 function textValidation(event) {
-  event.preventDefault();
+  event.preventDefault(); 
+  // debugger;
   var keyPressed = event.key;
-  if (keyPressed !== parsedCurrentPrompt[currentPromptChar]) {
+  var keyCode = event.keyCode;
+  if(keyCode == 8){
+    typingInput.classList.add('shake');
+  } else if (keyPressed !== parsedCurrentPrompt[currentPromptChar]) {
     typingInput.classList.add('shake');
   } else {
     typingInput.value += keyPressed;
@@ -89,6 +94,22 @@ function textValidation(event) {
     winLevel();
   }
 }
+
+function backspaceHandler(event) {
+  event.preventDefault();
+  if(event.keyCode == 8){
+    currentPromptChar--;
+  }
+}
+  // LOOK HERE CONNOR+++++++++=========================================================
+//                     if (keyCode == 8) {
+//                       currentPromptChar--;
+//                       // debugger;
+//                     }
+  
+//   // debugger;
+// }
+
 //this is our function which allows the validation input box to continue shaking
 function refreshShake() {
   typingInput.classList.remove('shake');
