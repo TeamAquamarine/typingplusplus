@@ -146,7 +146,7 @@ function winLevel() {
 
       var winMsg = 'Congratulations, ' + currentUser.name + '! You\'re promoted!';
       localStorage.setItem('highScoreMsg', JSON.stringify(winMsg));
-      window.location.href = 'typingplusplus.com/html/high_score.html';
+      window.location.href = 'https://www.typingplusplus.com/html/high_score.html';
 
     } else {
       levelArray[currentUser.level - 1].render();
