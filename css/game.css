@@ -6,10 +6,9 @@
 
 #gameContent {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 20px;
+  left: 20px;
 }
-
 #promptSection {
   width: 500px;
   height: 200px;
@@ -22,7 +21,7 @@
 
 #promptSection p{
 position: absolute;
-top: 20px;
+top: 30px;
 left: 10px;
 }
 
@@ -37,8 +36,8 @@ input.break {
 }
 aside {
   position: relative;
-  top: 0;
-  left: 529px;
+  top: 20px;
+  left: 549px;
   width: 150px;
 }
 

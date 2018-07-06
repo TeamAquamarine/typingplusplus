@@ -4,7 +4,7 @@ $secondary: #434343;  */
 
 body {
   max-width: 100%;
-  font-family: 'Muli', sans-serif;
+  font-family: 'robotic', sans-serif;
   background: white;
   margin: auto;
 }
@@ -25,9 +25,7 @@ position: relative;
 
 nav img {
   display:inline-block;
-  /* float:; */
   max-height: 70px;
-  /* margin-top: top -3px; */
   margin-left:20px;
 }
 nav ul{
@@ -57,7 +55,7 @@ li a:hover {
 #homeSection{
   position: relative;
   top: 10%;
-  left: 30%; 
+  left: 25%; 
 }
 #logo{
   position: absolute;
@@ -109,9 +107,7 @@ li a:hover {
     position: absolute;
     top: 491px;
     left: 200px;
-    /* margin: 2em 3.5em 0em -.6em; */
-    /* display:inline-block; */
-    padding:.4em 2em;
+    padding:.3em 2em;
     border-radius:1em;
     box-sizing: border-box;
     text-decoration:none;
@@ -123,10 +119,8 @@ li a:hover {
     text-align:center;
     transition: all 0.2s;
     width: 120px;
-    /* border: .5px solid grey; */
-    box-shadow: 0px 0px 0px .5px grey;
     }
-  a{
+  a{ 
     margin: auto;
     text-decoration:none;
     color: white;
