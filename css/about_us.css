@@ -1,7 +1,10 @@
 
 #cardBox {
-  margin: auto;
+  /* margin: auto; */
   position: relative;
+  top: 0px;
+  left: 70px;
+  width:960px;
 }
 
 #sharonCard {

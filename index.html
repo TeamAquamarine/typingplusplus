@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Typing ++</title>
+  <link href="https://fonts.googleapis.com/css?family=Boogaloo|Muli|Roboto" rel="stylesheet">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/inputvalidation.css" />
-  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="./css/inputvalidation.css" /> -->
 </head>
 
 <body>
@@ -31,7 +31,9 @@
   </header>
   <main>
     <section id="homeSection">
+      <div id= "animateLogo">
       <img id="logo" src="./images/logo_home.png" alt="Big logo with tilted last box">
+    </div>
       <form action="./html/game.html" method="get" id="playForm" autocomplete="off">
         <input type="text" name="fname" placeholder="Player Name" id="playerNameInput" required>
 
@@ -39,9 +41,12 @@
           </button>
 
       </form>
-      <a href="./html/high_score.html">
+      <!-- <a href="./html/high_score.html">
         <div id="highScoreButton">
-          High Score </a>
+          High Score </a> -->
+          <a href="./html/high_score.html"> <button id="highScoreButton" type="link">High Scores
+          </button>
+          </a>
         </div>
     </section>
   </main>

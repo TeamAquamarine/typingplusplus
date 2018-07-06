@@ -7,13 +7,19 @@ var currentPrompt;
 var currentPromptChar = 0;
 var parsedCurrentPrompt;
 var levelArray = [];
+var highScoreArray = JSON.parse(localStorage.getItem('highScoreArray') || '[]');
 var currentScore = document.getElementById('score');
 var currentLevelRender = document.getElementById('level');
 var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-var levelOnePrompts = ['a + b', 'b - c', 'c * d'];
-var levelTwoPrompts = ['e / f', 'f % g', 'g +=1'];
-// var levelOnePrompts = ['var i = 0', 'console.log', 'function winLevel(){}'];
-// var levelTwoPrompts = ['document.getElementById', 'event.preventDefault();', 'if (!localStorage.getItem)'];
+// var levelOnePrompts = ['a + b', 'b - c', 'c * d'];
+// var levelTwoPrompts = ['e / f', 'f % g', 'g +=1'];
+var levelOnePrompts = ['var i = 0;', 'console.log()', 'function winLevel(){}'];
+var levelTwoPrompts = ['document.getElementById();', 'event.preventDefault();', 'if (!localStorage.getItem){}'];
+var levelThreePrompts = ['function User(name){ this.name = name;}', 'this.highscore = 0; this.level = 1;'];
+// var levelFourPrompts = ['<p>Hi, how are you?</p>', '<h1>This is a header!</h1>'];
+// var levelFivePrompts = ['p { color: red }', 'git push origin master', 'mkdir newfolder'];
+// var levelSixPrompts = ['p { font-family: arial }', 'git checkout -b tuesdayBranch', '#playerOne { color: blue }'];
+// var levelSevenPrompts = ['git commit -m "this is the best commit ever"', 'cd../..'];
 /***********************************
 *     DOM access nodes             *
 ************************************/
@@ -50,7 +56,7 @@ Level.prototype.render = function () {
   currentPromptChar = 0;
   renderLevel();
   renderScore();
-  
+
   // Start timer
 };
 
@@ -68,14 +74,19 @@ function startTimerHandler() {
 
 //creating the event listeners for the validation input box
 var typingInput = document.getElementById('typingInput');
-typingInput.addEventListener('keypress', textValidation);
+typingInput.addEventListener('keydown', textValidation);
 typingInput.addEventListener('animationend', refreshShake);
+//if keypress = ==8 then --currentpromptchar
 
 //this is our function to validate text
 function textValidation(event) {
   event.preventDefault();
+  // debugger;
   var keyPressed = event.key;
-  if (keyPressed !== parsedCurrentPrompt[currentPromptChar]) {
+  var keyCode = event.keyCode;
+  if (keyCode == 8) {
+    typingInput.classList.add('shake');
+  } else if (keyPressed !== parsedCurrentPrompt[currentPromptChar]) {
     typingInput.classList.add('shake');
   } else {
     typingInput.value += keyPressed;
@@ -83,28 +94,60 @@ function textValidation(event) {
     winLevel();
   }
 }
+
+function backspaceHandler(event) {
+  event.preventDefault();
+  if (event.keyCode == 8) {
+    currentPromptChar--;
+  }
+}
+// LOOK HERE CONNOR+++++++++=========================================================
+//                     if (keyCode == 8) {
+//                       currentPromptChar--;
+//                       // debugger;
+//                     }
+
+//   // debugger;
+// }
+
 //this is our function which allows the validation input box to continue shaking
 function refreshShake() {
   typingInput.classList.remove('shake');
+  typingInput.classList.remove('flashGreen');
 }
 
 //new levels
 new Level(currentUser.level, levelOnePrompts, 10);
 new Level(currentUser.level, levelTwoPrompts, 20);
+new Level(currentUser.level, levelThreePrompts, 30);
+// new Level(currentUser.level, levelFourPrompts, 30);
+// new Level(currentUser.level, levelFivePrompts, 30);
+// new Level(currentUser.level, levelSixPrompts, 30);
+// new Level(currentUser.level, levelSevenPrompts, 30);
 // render level one
-levelArray[0].render();
+levelArray[currentUser.level - 1].render();
 
 function winLevel() {
   //adds to high score and increments the level
   if (currentPromptChar == parsedCurrentPrompt.length) {
-    currentUser.highScore += 1000000;
+    typingInputNode.classList.add('flashGreen');
+    currentUser.highScore += Math.floor(1000000 * (currentLevel.timer.timeRemaining / currentLevel.timer.totalTime));
     currentUser.level++;
     currentLevel.timer.stopTimer();
     typingInputNode.blur();
     updateLocalStorage();
     //end of game send user to high score and generate table
     if (currentUser.level > levelArray.length) {
+      highScoreArray.push(currentUser);
+      localStorage.setItem('highScoreArray', JSON.stringify(highScoreArray));
+      currentUser.level = 1;
+      currentUser.highScore = 0;
+      updateLocalStorage();
+
+      var winMsg = 'Congratulations, ' + currentUser.name + '! You\'re promoted!';
+      localStorage.setItem('highScoreMsg', JSON.stringify(winMsg));
       window.location.href = 'https://teamaquamarine.github.io/html/high_score.html';
+
     } else {
       levelArray[currentUser.level - 1].render();
       currentLevel.timer.resetTimer();
