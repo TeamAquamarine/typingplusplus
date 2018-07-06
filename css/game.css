@@ -6,37 +6,39 @@
 
 #gameContent {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 20px;
+  left: 20px;
 }
-
 #promptSection {
-  width: 400px;
+  width: 500px;
   height: 200px;
+  /* margin: 5px 8px; */
   outline: 1px solid #434343;
   margin-bottom: 25px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 20px;
+}
+
+#promptSection p{
+position: absolute;
+top: 30px;
+left: 10px;
 }
 
 #typingSection {
-  width: 400px;
+  width: 500px;
   height: 200px;
   outline: 1px solid #434343;
 }
-
+input.break {
+  word-wrap: break-word;
+  word-break: break-all;
+}
 aside {
   position: relative;
-  top: 0;
-  left: 430px;
+  top: 20px;
+  left: 549px;
   width: 150px;
-  
-
-}
-h2 {
-  font-size: 1.1em;
-  font-family: 'Boogaloo', cursive;
-  font-weight: lighter;
-  color: #434343;
-  margin-bottom: 10px;
 }
 
 #highScoreSection {
@@ -69,23 +71,31 @@ max-height: 372px;
 #purpleBug {
   position:absolute;
   left:0;
-  top:0;
+  top:-31px;
   max-width: 80px;
 }
 #greenBug {
-  position:absolute;
+  position:relative;
   left:50px;
-  top:10px;
+  top:-13px;
   max-width: 80px;
 }
 
 #typingInput {
-  width: 95%;
+  width: 90%;
   height: 85px;
   margin: 5px 8px;
   border: none;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 20px;
 }
-
+h2 {
+  font-size: 1.1em;
+  font-family: 'Boogaloo', cursive;
+  font-weight: lighter;
+  color: #434343;
+  margin-bottom: 10px;
+}
 #typingInput:focus {
   outline: none;
 }
@@ -107,4 +117,16 @@ max-height: 372px;
  80% {transform: translate(-1px, -1px) rotate(1deg); }
  90% {transform: translate(1px, 2px) rotate(0deg); }
  100% {transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.flashGreen {
+  animation: flashGreen .25s;
+}
+@keyframes flashGreen {
+  from {
+    background: white;
+  }
+  to {
+    background: #42f471;
+  }
 }

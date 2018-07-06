@@ -34,13 +34,26 @@ User.prototype.storeLocal = function() {
 playButton.addEventListener('submit', createUserObject);
 // Creates a new user and saves to local storage when name is inputted and play is clicked
 function createUserObject(event){
-  console.log(event);
   event.preventDefault();
-  currentUser = new User(userNode.value);
+  console.log(userNode.value);
+  console.log(userNode);
+  previousUserCheck();
   userArray.push(currentUser);
   localStorage.setItem('users', JSON.stringify(userArray));
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
   window.location.href = 'https://teamaquamarine.github.io/typingplusplus/html/game.html';
+}
+
+function previousUserCheck(){
+  for (var i = 0; i < userArray.length; i++){
+
+    if(userArray[i].name === userNode.value){
+      currentUser = userArray[i];
+      break;
+    } else {
+      currentUser = new User(userNode.value);
+    }
+  }
 }
 
 /********************************************************************************
@@ -73,5 +86,6 @@ function populateUserArray (defaultScore){
 // calls the populate default users in not in storage
 if (!localStorage.getItem('users')){
   populateUserArray();
+  localStorage.setItem('highScoreArray', JSON.stringify(userArray));
 }
 
