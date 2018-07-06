@@ -25,6 +25,10 @@ Timer.prototype.countDown = function () {
       console.log(_this.timeRemaining);
     } else {
       var loseMsg = 'Sorry, ' + currentUser.name + '... You\'re fired!';
+      highScoreArray.push(currentUser);
+      localStorage.setItem('highScoreArray', JSON.stringify(highScoreArray));
+      currentUser.highScore = 0;
+
       localStorage.setItem('highScoreMsg', JSON.stringify(loseMsg));
       window.location.href = '../html/high_score.html';
       clearInterval(timeInterval);

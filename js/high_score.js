@@ -11,7 +11,7 @@ var highScoreHeader = document.getElementById('highScoreHeader');
 
 //sort playerArray
 var rankedArray = playerArray.slice();
-rankedArray.sort(function(a,b) {
+rankedArray.sort(function (a, b) {
   return a.highScore - b.highScore;
 });
 rankedArray = rankedArray.reverse();
@@ -35,7 +35,7 @@ function createTableBody() {
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   //create row for each player in array
-  for (var i = 0; i < 10; i++ ) {
+  for (var i = 0; i < 10; i++) {
     //add player name
     trEl = document.createElement('tr');
     tdEl = document.createElement('td');

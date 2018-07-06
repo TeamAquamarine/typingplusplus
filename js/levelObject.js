@@ -15,11 +15,11 @@ var currentUser = JSON.parse(localStorage.getItem('currentUser'));
 // var levelTwoPrompts = ['e / f', 'f % g', 'g +=1'];
 var levelOnePrompts = ['var i = 0;', 'console.log()', 'function winLevel(){}'];
 var levelTwoPrompts = ['document.getElementById();', 'event.preventDefault();', 'if (!localStorage.getItem){}'];
-var levelThreePrompts = ['function User(name){ this.name = name;}','this.highscore = 0; this.level = 1;'];
-var levelFourPrompts = ['<p>Hi, how are you?</p>', '<h1>This is a header!</h1>'];
-var levelFivePrompts = ['p { color: red }', 'git push origin master', 'mkdir newfolder'];
-var levelSixPrompts = ['p { font-family: arial }', 'git checkout -b tuesdayBranch', '#playerOne { color: blue }'];
-var levelSevenPrompts = ['git commit -m "this is the best commit ever"', 'cd../..'];
+var levelThreePrompts = ['function User(name){ this.name = name;}', 'this.highscore = 0; this.level = 1;'];
+// var levelFourPrompts = ['<p>Hi, how are you?</p>', '<h1>This is a header!</h1>'];
+// var levelFivePrompts = ['p { color: red }', 'git push origin master', 'mkdir newfolder'];
+// var levelSixPrompts = ['p { font-family: arial }', 'git checkout -b tuesdayBranch', '#playerOne { color: blue }'];
+// var levelSevenPrompts = ['git commit -m "this is the best commit ever"', 'cd../..'];
 /***********************************
 *     DOM access nodes             *
 ************************************/
@@ -80,11 +80,11 @@ typingInput.addEventListener('animationend', refreshShake);
 
 //this is our function to validate text
 function textValidation(event) {
-  event.preventDefault(); 
+  event.preventDefault();
   // debugger;
   var keyPressed = event.key;
   var keyCode = event.keyCode;
-  if(keyCode == 8){
+  if (keyCode == 8) {
     typingInput.classList.add('shake');
   } else if (keyPressed !== parsedCurrentPrompt[currentPromptChar]) {
     typingInput.classList.add('shake');
@@ -97,16 +97,16 @@ function textValidation(event) {
 
 function backspaceHandler(event) {
   event.preventDefault();
-  if(event.keyCode == 8){
+  if (event.keyCode == 8) {
     currentPromptChar--;
   }
 }
-  // LOOK HERE CONNOR+++++++++=========================================================
+// LOOK HERE CONNOR+++++++++=========================================================
 //                     if (keyCode == 8) {
 //                       currentPromptChar--;
 //                       // debugger;
 //                     }
-  
+
 //   // debugger;
 // }
 
@@ -143,10 +143,12 @@ function winLevel() {
       currentUser.level = 1;
       currentUser.highScore = 0;
       updateLocalStorage();
+
       var winMsg = 'Congratulations, ' + currentUser.name + '! You\'re promoted!';
       localStorage.setItem('highScoreMsg', JSON.stringify(winMsg));
       window.location.href = '../html/high_score.html';
       highScoreHeader.textContent = 'CONGRATULATIONS, ' + currentUser.name + '! You\'re promoted!';
+      
     } else {
       levelArray[currentUser.level - 1].render();
       currentLevel.timer.resetTimer();
