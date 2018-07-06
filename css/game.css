@@ -23,7 +23,7 @@
 #promptSection p{
 position: absolute;
 top: 20px;
-left: 30px;
+left: 10px;
 }
 
 #typingSection {
@@ -40,7 +40,6 @@ aside {
   top: 0;
   left: 529px;
   width: 150px;
-  
 }
 
 #highScoreSection {
@@ -73,13 +72,13 @@ max-height: 372px;
 #purpleBug {
   position:absolute;
   left:0;
-  top:0;
+  top:-31px;
   max-width: 80px;
 }
 #greenBug {
   position:absolute;
   left:50px;
-  top:10px;
+  top:-13px;
   max-width: 80px;
 }
 
