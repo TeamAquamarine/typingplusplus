@@ -41,7 +41,7 @@ function createUserObject(event){
   userArray.push(currentUser);
   localStorage.setItem('users', JSON.stringify(userArray));
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
-  window.location.href = 'https://teamaquamarine.github.io/typingplusplus/html/game.html';
+  window.location.href = 'https://www.typingplusplus.com/html/game.html';
 }
 
 function previousUserCheck(){
