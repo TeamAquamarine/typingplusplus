@@ -86,5 +86,6 @@ function populateUserArray (defaultScore){
 // calls the populate default users in not in storage
 if (!localStorage.getItem('users')){
   populateUserArray();
+  localStorage.setItem('highScoreArray', JSON.stringify(userArray));
 }
 
